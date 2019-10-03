@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>
+    Lab Due on 10/3
+    </title>
+    </head>
+    <body>
+    <p>
+    A1 <br>
+    <pre> var getGrade = function(quiz)
+         {
+            return quiz.grade;
+         }
+        var answer=getGrade;</pre>
+    We need the quiz grade, so we need a function to go get it. In here, we can grab all the grades. The return is used because we don't want to steal it from the dataset. 
+    <br><br>
+    A2 <br>
+        <pre>var val=classroom[0].quizes.map(getGrade);
+        var answer=d3.mean(val)</pre>
+        We don't need to have another var. We did it just to make it clearer. The idea here is pretty easy. We have the getGrade already. So we just need to specify which penguin and what grade we need (in this case, we need the quizes). d3.mean will just help us do the work.
+    <br><br>
+    A3 <br>
+    <pre>
+    var anypenguin = function(penguin)
+ {
+     return d3.mean(penguin.quizes,getGrade)
+ }
+ var answer= anypenguin</pre>
+        We need a function to find the mean of the quiz grades for a given penguin. First thing, because we already have all the grades, we only need to specify that we need the quizes grades. And we need the mean, so we need the d3.mean.
+        <br><br>
+        A4
+        <pre>var answer=classroom.map(anypenguin)</pre>We have the function already, so we just need to show it. That's why we use map to create a new array.
+        <br><br>
+        A5
+        <pre>var all=classroom.map(anypenguin)
+var answer=d3.mean(all)
+</pre> We have all the mean of each penguin, and the mean of those individual mean is going to be the mean of the class.
+        </p>
+    </body>
+</html>
